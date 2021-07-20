@@ -145,6 +145,7 @@
     -webkit-align-items: center;
     align-items: center;
     position: relative;
+    margin-right: 10px;
 }
 
 .obpress-spa-top-swiper .swiper-slide:nth-child(3n+2) {
