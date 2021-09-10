@@ -2,6 +2,24 @@
 
 class Demo_Info_Slider extends \Elementor\Widget_Base
 {
+	public function __construct($data = [], $args = null) {
+		parent::__construct($data, $args);
+
+		wp_register_script( 'demo_info_slider_js',  plugins_url( '/OBPress_Demo_Widgets/widgets/assets/js/demo-info-slider.js'), [ 'elementor-frontend' ], '1.0.0', true );
+
+		wp_register_style( 'demo_info_slider_css', plugins_url( '/OBPress_Demo_Widgets/widgets/assets/css/demo-info-slider.css') );           
+	}
+
+	public function get_script_depends()
+	{
+		return ['demo_info_slider_js'];
+	}
+
+	public function get_style_depends()
+	{
+		return ['demo_info_slider_css'];
+	}
+
 	public function get_name()
 	{
 		return 'SpaBot';

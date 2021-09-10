@@ -2,6 +2,22 @@
 
 class Demo_Info_Gallery extends \Elementor\Widget_Base
 {
+	public function __construct($data = [], $args = null) {
+		parent::__construct($data, $args);
+		wp_register_script( 'demo_info_gallery_js',  plugins_url( '/OBPress_Demo_Widgets/widgets/assets/js/demo-info-gallery.js'), [ 'elementor-frontend' ], '1.0.0', true );
+		wp_register_style( 'demo_info_gallery_css', plugins_url( '/OBPress_Demo_Widgets/widgets/assets/css/demo-info-gallery.css') );                 
+	}
+
+	public function get_script_depends()
+	{
+		return ['demo_info_gallery_js'];
+	}
+
+	public function get_style_depends()
+	{
+		return ['demo_info_gallery_css'];
+	}
+
 	public function get_name()
 	{
 		return 'SpaTop';

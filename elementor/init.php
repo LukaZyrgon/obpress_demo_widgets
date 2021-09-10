@@ -163,18 +163,14 @@ final class OBPress_Demo_Widgets {
 	}
 
 	public function widget_styles() {
-		wp_register_style( 'demo_info_gallery_css', plugins_url( '/OBPress_Demo_Widgets/widgets/assets/css/demo-info-gallery.css') );        
         wp_enqueue_style('demo_info_gallery_css');
 
-		wp_register_style( 'demo_info_slider_css', plugins_url( '/OBPress_Demo_Widgets/widgets/assets/css/demo-info-slider.css') );        
         wp_enqueue_style('demo_info_slider_css');
 	}
 
 	public function widget_scripts() {
-		wp_register_script( 'demo_info_gallery_js',  plugins_url( '/OBPress_Demo_Widgets/widgets/assets/js/demo-info-gallery.js'), array('jquery'), null, true );
 		wp_enqueue_script('demo_info_gallery_js');
 
-		wp_register_script( 'demo_info_slider_js',  plugins_url( '/OBPress_Demo_Widgets/widgets/assets/js/demo-info-slider.js'), array('jquery'), null, true );
 		wp_enqueue_script('demo_info_slider_js');
 
 	}
