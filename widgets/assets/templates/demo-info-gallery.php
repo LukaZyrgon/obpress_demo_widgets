@@ -5,7 +5,7 @@
         <div class="obpress-spa-offer-holder-description">
            <?= $settings['obpress_custom_demo_description']?>
         </div>
-        <button class="obpress-spa-widget-button"><?= $settings['obpress_custom_button_content']?></button>
+        <a href="/chain-results" class="obpress-spa-widget-button"><?= $settings['obpress_custom_button_content']?></a>
     </div>
     <div class="obpress-spa-swiper" data-allow-loop="<?= $settings['obpress_custom_slider_top_allow_loop']; ?>" data-centered-slides="<?= $settings['obpress_custom_slider_top_center_slides']; ?>" data-slides-per-view="<?= $settings['obpress_custom_slider_top_slides_per_view']['size']; ?>" data-space-between="<?= $settings['obpress_custom_slider_top_slider_space_between']['size']; ?>" data-transition="<?= $settings['obpress_custom_slider_top_slider_transition']['size']; ?>" data-pagination="<?= $settings['obpress_custom_slider_top_slide_pagination'] ?>">
         <!-- Slider main container -->

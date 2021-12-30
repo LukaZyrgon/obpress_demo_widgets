@@ -8,7 +8,7 @@
             <p class="obrpress-spa-top-time-title">Horário de Funcionamento</p>
             <p class="obpress-spa-top-time"><strong>Segunda à Sexta:</strong> <span class="obpress-spa-time-weekday"><?= $settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_workdays'] ?></span></p> 
             <p class="obpress-spa-top-time"><strong>Sábado e Domingo:</strong> <span class="obpress-spa-time-weekend"><?= $settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_weekends'] ?></span></p> 
-            <button class="obpress-spa-top-widget-button">Ir para Hotel</button>
+            <a href="/chain-results" class="obpress-spa-top-widget-button">Ir para Hotel</a>
         </div>
         <div class="obpress-spa-top-widget-gallery">
             <div class="obpress-spa-top-swiper">
