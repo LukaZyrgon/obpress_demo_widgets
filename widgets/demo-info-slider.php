@@ -495,6 +495,10 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			$nextIcon = $settings['obpress_custom_demo_bot_pagination_bullet_next_icon']['value']['url'];
 		}
 
+		// check which page it is
+		global $wp;
+    	$current_url = $wp->request;
+
 		require_once(WP_PLUGIN_DIR . '/OBPress_Demo_Widgets/widgets/assets/templates/demo-info-slider.php');
 	}
 }

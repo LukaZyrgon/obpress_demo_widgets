@@ -1,4 +1,9 @@
-<div class="obpress-spa-top-holder">
+<script>
+
+    var slides
+
+</script>
+<div class="obpress-spa-top-holder" data-slides-per-view="<?php if ($current_url == "restaurants") { echo '2'; } else { echo '1'; } ?>">
     <div class="obpress-spa-top-widget-holder">
         <div class="obpress-spa-top-widget-info">
             <h4><?= $settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_location'] ?></h4>

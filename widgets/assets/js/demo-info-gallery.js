@@ -2,13 +2,22 @@ jQuery(window).on("elementor/frontend/init", function () {
   //hook name is 'frontend/element_ready/{widget-name}.{skin} - i dont know how skins work yet, so for now presume it will
   //always be 'default', so for example 'frontend/element_ready/slick-slider.default'
   //$scope is a jquery wrapped parent element
+
+
+  // get number of slides in column
+
+  var slidesPerView = jQuery(".obpress-spa-top-holder").data("slides-per-view");
+
+  console.log(slidesPerView);
+
+
   elementorFrontend.hooks.addAction(
     "frontend/element_ready/SpaBot.default",
     function ($scope, $) {
       const swiper = new Swiper(".obpress-spa-top-swiper .swiper-container", {
         // Optional parameters
         direction: "horizontal",
-        slidesPerView: 1,
+        slidesPerView: slidesPerView,
         slidesPerColumn: 3,
         speed: 1000,
         //   slidesPerColumnFill: "row",

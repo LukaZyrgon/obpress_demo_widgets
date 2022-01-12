@@ -32,8 +32,7 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
     } else {
       swiperSettings.centeredSlides = true;
     }
-      
-    console.log(swiperSettings);
+  
 
     const swiper = new Swiper(".obpress-spa-swiper .swiper-container", {
       // Optional parameters
@@ -44,6 +43,7 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
       spaceBetween: swiperSettings.spaceBetween,
       centeredSlides:swiperSettings.centeredSlides,
       autoHeight: true,
+
   
       // If we need pagination
       pagination: {
