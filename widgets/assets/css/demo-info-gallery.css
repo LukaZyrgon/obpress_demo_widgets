@@ -7,6 +7,7 @@
     max-width: 560px;
     width: 100%;
     text-align: center;
+    position: relative;
 }
 
 .obpress-spa-offer-holder-type {
@@ -54,6 +55,10 @@
     margin-right: auto;
     padding: 15px 48px;
     cursor: pointer;
+    width: 200px;
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 100px);
 }
 
 /* .obpress-spa-swiper .swiper-slide img {
