@@ -139,9 +139,9 @@ final class OBPress_Demo_Widgets {
 
         add_action('elementor/widgets/widgets_registered', [ $this, 'init_widgets']);
 
-        add_action('elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles']);
+        // add_action('elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles']);
 
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
+		// add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
 
         add_action('elementor/elements/categories_registered', [ $this, 'add_elementor_widget_categories']);
 
@@ -152,9 +152,13 @@ final class OBPress_Demo_Widgets {
 		// Include Widget files
 		require_once(WP_PLUGIN_DIR . '/OBPress_Demo_Widgets/widgets/demo-info-gallery.php');
 		require_once(WP_PLUGIN_DIR . '/OBPress_Demo_Widgets/widgets/demo-info-slider.php');
+		require_once(WP_PLUGIN_DIR . '/OBPress_Demo_Widgets/widgets/demo-interest-slider.php');
+
+
 		// Register widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Demo_Info_Slider() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Demo_Info_Gallery() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Demo_Interest_Slider() );
 
 		// Include Widget files
 		
@@ -162,18 +166,18 @@ final class OBPress_Demo_Widgets {
 		// Register widget
 	}
 
-	public function widget_styles() {
-        wp_enqueue_style('demo_info_gallery_css');
+	// public function widget_styles() {
+    //     wp_enqueue_style('demo_info_gallery_css');
 
-        wp_enqueue_style('demo_info_slider_css');
-	}
+    //     wp_enqueue_style('demo_info_slider_css');
+	// }
 
-	public function widget_scripts() {
-		wp_enqueue_script('demo_info_gallery_js');
+	// public function widget_scripts() {
+	// 	wp_enqueue_script('demo_info_gallery_js');
 
-		wp_enqueue_script('demo_info_slider_js');
+	// 	wp_enqueue_script('demo_info_slider_js');
 
-	}
+	// }
 
     function add_elementor_widget_categories( $elements_manager ) {
         $elements_manager->add_category(
