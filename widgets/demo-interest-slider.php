@@ -161,7 +161,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_slides_per_view',
 			[
-				'label' => __('Slides Per View', 'OBPress_SpecialOffers'),
+				'label' => __('Slides Per View Desktop', 'OBPress_SpecialOffers'),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => ['slides'],
 				'range' => [
@@ -179,9 +179,29 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
+			'obpress_interest_slides_per_view_mobile',
+			[
+				'label' => __('Slides Per View Mobile', 'OBPress_SpecialOffers'),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => ['slides'],
+				'range' => [
+					'slides' => [
+						'min' => 1,
+						'max' => 10,
+						'step' => 0.1,
+					]
+				],
+				'default' => [
+					'unit' => 'slides',
+					'size' => 1.4,
+				]
+			]
+		);
+
+		$this->add_control(
 			'obpress_interest_slider_space_between',
 			[
-				'label' => __( 'Space Between Slides', 'OBPress_SpecialOffers' ),
+				'label' => __( 'Space Between Slides Desktop', 'OBPress_SpecialOffers' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px'],
 				'range' => [
@@ -194,6 +214,26 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 				'default' => [
 					'unit' => 'px',
 					'size' => 40,
+				]
+			]
+		);
+
+		$this->add_control(
+			'obpress_interest_slider_space_between_mobile',
+			[
+				'label' => __( 'Space Between Slides Mobile', 'OBPress_SpecialOffers' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 200,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 11,
 				]
 			]
 		);

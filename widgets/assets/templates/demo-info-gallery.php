@@ -1,5 +1,5 @@
 <div class="obpress-spa-offer-holder">
-    <div class="obpress-spa-offer-holder-title">
+    <div class="obpress-spa-offer-holder-title desktop">
         <p class="obpress-spa-offer-holder-type"><?= $settings['obpress_custom_demo_type'] ?></p>
         <h2><?= $settings['obpress_custom_demo_title']?></h2>
         <div class="obpress-spa-offer-holder-description">
@@ -32,5 +32,11 @@
                 <div class="swiper-button-next" style="background-image:url(<?= $nextIcon ?>)"></div>
             </div>
         </div>
-    </div>            
+    </div>
+    <div class="obpress-spa-offer-holder-title mobile">
+        <div class="obpress-spa-offer-holder-description">
+           <?= $settings['obpress_custom_demo_description']?>
+        </div>
+        <a href="/chain-results" class="obpress-spa-widget-button"><?= $settings['obpress_custom_button_content']?></a>
+    </div>           
 </div>

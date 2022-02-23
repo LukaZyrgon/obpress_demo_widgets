@@ -9,11 +9,17 @@ jQuery(window).on("elementor/frontend/init", function () {
       swiperSettings.centeredSlides = swiperSelector.attr(
         "data-centered-slides"
       );
-      swiperSettings.slidesPerView = swiperSelector.attr(
+      swiperSettings.slidesPerViewDesktop = swiperSelector.attr(
         "data-slides-per-view"
       );
-      swiperSettings.spaceBetween = parseInt(
+      swiperSettings.slidesPerViewMobile = swiperSelector.attr(
+        "data-slides-per-view-mobile"
+      );
+      swiperSettings.spaceBetweenDesktop = parseInt(
         swiperSelector.attr("data-space-between")
+      );
+      swiperSettings.spaceBetweenMobile = parseInt(
+        swiperSelector.attr("data-space-between-mobile")
       );
       swiperSettings.speed =
         parseFloat(swiperSelector.attr("data-transition")) * 1000;
@@ -43,10 +49,18 @@ jQuery(window).on("elementor/frontend/init", function () {
         direction: "horizontal",
         loop: swiperSettings.loop,
         speed: swiperSettings.speed,
-        slidesPerView: swiperSettings.slidesPerView,
+        slidesPerView: swiperSettings.slidesPerViewMobile,
         centeredSlides: swiperSettings.centeredSlides,
-        spaceBetween: swiperSettings.spaceBetween,
+        spaceBetween: swiperSettings.spaceBetweenMobile,
         autoHeight: true,
+
+        // Options for desktop
+        breakpoints: {
+          1280: {
+              slidesPerView: swiperSettings.slidesPerViewDesktop,
+              spaceBetween: swiperSettings.spaceBetweenDesktop,
+          }
+        },
 
         // If we need pagination
         pagination: {

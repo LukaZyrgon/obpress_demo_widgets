@@ -133,3 +133,80 @@
   width: 625px;
   background-size: cover;
 }
+
+.obpress-spa-offer-holder-title.mobile {
+  display: none;
+}
+
+
+/* MOBILE */
+@media(max-width: 1279px) {
+
+  .obpress-spa-offer-holder {
+    flex-direction: column;
+    padding: 0px 20px;
+  }
+
+  .obpress-spa-swiper-nav .swiper-button-prev, 
+  .obpress-spa-swiper-nav .swiper-button-next {
+    display: none;
+  }
+
+  .obpress-spa-offer-holder-title.desktop p,
+  .obpress-spa-offer-holder-title.desktop .obpress-spa-offer-holder-description,
+  .obpress-spa-offer-holder-title.desktop .obpress-spa-widget-button {
+    display: none;
+  }
+
+  .obpress-spa-offer-holder-title.mobile {
+    display: block;
+  }
+
+  .obpress-spa-swiper {
+    max-width: 100%;
+  }
+
+  .obpress-spa-offer-holder-title {
+    max-width: 100%;
+  }
+
+  .obpress-spa-swiper-image {
+    width: 100%;
+    height: 272px;
+  }
+
+  .obpress-spa-offer-holder-title h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 26px;
+  }
+
+  .obpress-spa-swiper-nav {
+    margin-top: 10px;
+  }
+
+  .swiper-pagination-bullet {
+    height: 4px;
+  }
+
+  .obpress-spa-swiper-lines .swiper-pagination-bullet {
+    width: 17px;
+  }
+
+  .obpress-spa-swiper-lines .swiper-pagination-bullet-active {
+    width: 28px;
+  }
+
+  .obpress-spa-offer-holder-description {
+    font-size: 12px;
+  }
+
+  .obpress-spa-offer-holder-title p {
+    margin: 31px 0px 22px 0px;
+  }
+
+  .obpress-spa-widget-button {
+    padding: 11px 21px;
+    line-height: 18px;
+  }
+}

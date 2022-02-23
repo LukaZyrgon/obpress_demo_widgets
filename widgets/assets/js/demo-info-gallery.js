@@ -7,23 +7,33 @@ jQuery(window).on("elementor/frontend/init", function () {
   // get number of slides in column
 
   var slidesPerView = jQuery(".obpress-spa-top-holder").data("slides-per-view");
-
   console.log(slidesPerView);
 
-
   elementorFrontend.hooks.addAction(
-    "frontend/element_ready/SpaBot.default",
+    "frontend/element_ready/SpaTop.default",
     function ($scope, $) {
       const swiper = new Swiper(".obpress-spa-top-swiper .swiper-container", {
         // Optional parameters
         direction: "horizontal",
-        slidesPerView: slidesPerView,
-        slidesPerColumn: 3,
+        slidesPerView: 1,
+        slidesPerColumn: 1,
         speed: 1000,
         //   slidesPerColumnFill: "row",
         slidesPerGroup: 1,
-        //   spaceBetween: 1,
+        loop: true,
+        centeredSlides: true,
+        spaceBetween: 20,
 
+        // Options for desktop
+        breakpoints: {
+          1279: {
+              slidesPerColumn: 3,
+              loop: false,
+              spaceBetween: 0,
+              centeredSlides: false,
+              slidesPerView: slidesPerView,
+          }
+        },
         // If we need pagination
         pagination: {
           el: ".obpress-spa-top-widget-gallery .swiper-pagination",
@@ -35,6 +45,7 @@ jQuery(window).on("elementor/frontend/init", function () {
           prevEl: ".obpress-spa-top-widget-gallery .swiper-button-prev",
         },
       });
+
       jQuery(".obpress-swiper-overlay")
         .first()
         .addClass("obpress-overlay-selected");
