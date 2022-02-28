@@ -55,7 +55,7 @@
     margin-right: auto;
     padding: 15px 48px;
     cursor: pointer;
-    width: 200px;
+    /* width: 200px; */
     position: absolute;
     bottom: 0px;
     left: calc(50% - 100px);
@@ -208,5 +208,8 @@
   .obpress-spa-widget-button {
     padding: 11px 21px;
     line-height: 18px;
+    width: fit-content;
+    left: 0;
+    right: 0;
   }
 }
