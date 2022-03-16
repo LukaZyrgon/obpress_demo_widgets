@@ -24,7 +24,7 @@
                             </div>
                             <div class="obpress-offer-price-button">
                                 <div class="obpress-offer-button">
-                                    <a class="obpress-offer-more" href="/package?package_id=<?= $offer["rate_plan"]->RatePlanID ?>">See more</a>
+                                    <a class="obpress-offer-more" href="/package?package_id=<?= $offer["rate_plan"]->RatePlanID ?>"><?php _e('See more','OBPress_Demo_Widgets') ?></a>
                                 </div>
                             </div>
                         </div>
