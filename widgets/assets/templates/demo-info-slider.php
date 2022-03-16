@@ -1,8 +1,3 @@
-<script>
-
-    var slides
-
-</script>
 <div class="obpress-spa-top-holder" data-slides-per-view="<?php if ($current_url == "restaurants") { echo '2'; } else { echo '1'; } ?>">
     <div class="obpress-spa-top-widget-holder">
         <div class="obpress-spa-top-widget-info">
@@ -10,10 +5,10 @@
             <h3><?= $settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_title'] ?></h3>
             <p class="obpress-spa-top-description"><?= strip_tags($settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_description']) ?></p>
             <span class="obpress-spa-top-line"></span>
-            <p class="obrpress-spa-top-time-title">Working Hours</p>
-            <p class="obpress-spa-top-time"><strong>Monday to Friday:</strong> <span class="obpress-spa-time-weekday"><?= $settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_workdays'] ?></span></p> 
-            <p class="obpress-spa-top-time"><strong>Saturday and Sunday:</strong> <span class="obpress-spa-time-weekend"><?= $settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_weekends'] ?></span></p> 
-            <a href="/chain-results" class="obpress-spa-top-widget-button">Go to Hotel</a>
+            <p class="obrpress-spa-top-time-title"><?php _e('Working Hours','OBPress_Demo_Widgets') ?></p>
+            <p class="obpress-spa-top-time"><strong><?php _e('Monday to Friday','OBPress_Demo_Widgets') ?>:</strong> <span class="obpress-spa-time-weekday"><?= $settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_workdays'] ?></span></p> 
+            <p class="obpress-spa-top-time"><strong><?php _e('Saturday and Sunday','OBPress_Demo_Widgets') ?>:</strong> <span class="obpress-spa-time-weekend"><?= $settings['obpress_custom_demo_bot_demo'][0]['obpress_custom_demo_bot_weekends'] ?></span></p> 
+            <a href="/chain-results" class="obpress-spa-top-widget-button"><?php _e('Go to Hotel','OBPress_Demo_Widgets') ?></a>
         </div>
         <div class="obpress-spa-top-widget-gallery">
             <div class="obpress-spa-top-swiper">
