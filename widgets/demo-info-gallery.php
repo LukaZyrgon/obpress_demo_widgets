@@ -25,7 +25,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 
 	public function get_title()
 	{
-		return __('Spa Top', 'plugin-name');
+		return __('Spa Top', 'OBPress_Demo_Widgets');
 	}
 
 	public function get_icon()
@@ -44,7 +44,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'gallery_section',
 			[
-				'label' => __('Slider Gallery', 'OBPress_Spa_widgets'),
+				'label' => __('Slider Gallery', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -52,7 +52,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_gallery',
 			[
-				'label' => __('Slider Images', 'plugin-domain'),
+				'label' => __('Slider Images', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::GALLERY,
 			]
 		);
@@ -62,7 +62,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'demo_type_section',
 			[
-				'label' => __('Demo Type', 'OBPress_Spa_widgets'),
+				'label' => __('Demo Type', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -70,10 +70,10 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_demo_type',
 			[
-				'label' => __('Demo Type', 'plugin-domain'),
+				'label' => __('Demo Type', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('Demo Type', 'plugin-domain'),
-				'placeholder' => __('Type your type here', 'plugin-domain'),
+				'default' => __('Demo Type', 'OBPress_Demo_Widgets'),
+				'placeholder' => __('Type your type here', 'OBPress_Demo_Widgets'),
 			]
 		);
 
@@ -81,7 +81,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'obpress_custom_demo_type_typography',
-				'label' => __('Typography', 'OBPress_SpecialOffers'),
+				'label' => __('Typography', 'OBPress_Demo_Widgets'),
 				'selector' => '.obpress-spa-offer-holder-title p',
 			]
 		);
@@ -91,7 +91,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'demo_title_section',
 			[
-				'label' => __('Demo Title', 'OBPress_Spa_widgets'),
+				'label' => __('Demo Title', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -99,10 +99,10 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_demo_title',
 			[
-				'label' => __('Demo Title', 'plugin-domain'),
+				'label' => __('Demo Title', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('Demo Title', 'plugin-domain'),
-				'placeholder' => __('Type your title here', 'plugin-domain'),
+				'default' => __('Demo Title', 'OBPress_Demo_Widgets'),
+				'placeholder' => __('Type your title here', 'OBPress_Demo_Widgets'),
 			]
 		);
 
@@ -110,7 +110,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'obpress_custom_demo_title_typography',
-				'label' => __('Typography', 'OBPress_SpecialOffers'),
+				'label' => __('Typography', 'OBPress_Demo_Widgets'),
 				'selector' => '.obpress-spa-offer-holder-title h2',
 			]
 		);
@@ -120,7 +120,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'demo_description_section',
 			[
-				'label' => __('Demo Description', 'OBPress_Spa_widgets'),
+				'label' => __('Demo Description', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -128,10 +128,10 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_demo_description',
 			[
-				'label' => __('Demo Description', 'plugin-domain'),
+				'label' => __('Demo Description', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::WYSIWYG,
-				'default' => __('Demo Description', 'plugin-domain'),
-				'placeholder' => __('Type your description here', 'plugin-domain'),
+				'default' => __('Demo Description', 'OBPress_Demo_Widgets'),
+				'placeholder' => __('Type your description here', 'OBPress_Demo_Widgets'),
 			]
 		);
 
@@ -139,7 +139,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'obpress_custom_demo_description_typography',
-				'label' => __('Typography', 'OBPress_SpecialOffers'),
+				'label' => __('Typography', 'OBPress_Demo_Widgets'),
 				'selector' => '.obpress-spa-offer-holder-description',
 			]
 		);
@@ -149,7 +149,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'demo_button_section',
 			[
-				'label' => __('Demo Button', 'OBPress_Spa_widgets'),
+				'label' => __('Demo Button', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -157,10 +157,10 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_button_content',
 			[
-				'label' => __('Demo Button', 'plugin-domain'),
+				'label' => __('Demo Button', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('Demo Button', 'plugin-domain'),
-				'placeholder' => __('Type your button content here', 'plugin-domain'),
+				'default' => __('Demo Button', 'OBPress_Demo_Widgets'),
+				'placeholder' => __('Type your button content here', 'OBPress_Demo_Widgets'),
 			]
 		);
 
@@ -169,7 +169,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'color_section',
 			[
-				'label' => __('Colors', 'OBPress_Spa_widgets'),
+				'label' => __('Colors', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -177,7 +177,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_type_color',
 			[
-				'label' => __('Demo Type Color', 'OBPress_SpecialOffers'),
+				'label' => __('Demo Type Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#777777',
@@ -190,7 +190,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_title_color',
 			[
-				'label' => __('Demo Title Color', 'OBPress_SpecialOffers'),
+				'label' => __('Demo Title Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
@@ -203,7 +203,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_description_color',
 			[
-				'label' => __('Demo Description Color', 'OBPress_SpecialOffers'),
+				'label' => __('Demo Description Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
@@ -218,7 +218,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'typography_section',
 			[
-				'label' => __('Typography', 'OBPress_Spa_widgets'),
+				'label' => __('Typography', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -227,7 +227,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'so_buttons_typography',
-				'label' => __('Demo Type', 'OBPress_Spa_widgets'),
+				'label' => __('Demo Type', 'OBPress_Demo_Widgets'),
 				'selector' => '.obpress-spa-offer-holder-title p',
 			]
 		);
@@ -236,7 +236,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'so_buttons_typography',
-				'label' => __('Demo Title', 'OBPress_Spa_widgets'),
+				'label' => __('Demo Title', 'OBPress_Demo_Widgets'),
 				'selector' => '.obpress-spa-offer-holder-title h2',
 			]
 		);
@@ -245,7 +245,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'so_buttons_typography',
-				'label' => __('Demo Title', 'OBPress_Spa_widgets'),
+				'label' => __('Demo Title', 'OBPress_Demo_Widgets'),
 				'selector' => '.obpress-spa-offer-holder-description',
 			]
 		);
@@ -255,7 +255,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'obpress_custom_slider_top_button_section',
 			[
-				'label' => __('Button', 'OBPress_Spa_widgets'),
+				'label' => __('Button', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -263,7 +263,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_button_background_color',
 			[
-				'label' => __('Button Background Color', 'OBPress_Spa_widgets'),
+				'label' => __('Button Background Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
@@ -276,7 +276,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_button_text_color',
 			[
-				'label' => __('Button Text Color', 'OBPress_Spa_widgets'),
+				'label' => __('Button Text Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#fff',
@@ -290,7 +290,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'obpress_custom_slider_top_typography',
-				'label' => __('Typography', 'OBPress_Spa_widgets'),
+				'label' => __('Typography', 'OBPress_Demo_Widgets'),
 				'selector' => '.obpress-spa-widget-button',
 			]
 		);
@@ -299,7 +299,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'border',
-				'label' => __('Border', 'OBPress_Spa_widgets'),
+				'label' => __('Border', 'OBPress_Demo_Widgets'),
 				'selector' => '.obpress-spa-widget-button',
 			]
 		);
@@ -309,7 +309,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'obpress_custom_slider_top_slider_section',
 			[
-				'label' => __('Slider', 'OBPress_Spa_widgets'),
+				'label' => __('Slider', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -318,10 +318,10 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_allow_loop',
 			[
-				'label' => __('Allow Image Looping', 'OBPress_Spa_widgets'),
+				'label' => __('Allow Image Looping', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __('On', 'OBPress_SpecialOffers'),
-				'label_off' => __('Off', 'OBPress_SpecialOffers'),
+				'label_on' => __('On', 'OBPress_Demo_Widgets'),
+				'label_off' => __('Off', 'OBPress_Demo_Widgets'),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -330,10 +330,10 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_center_slides',
 			[
-				'label' => __('Centered Slides', 'OBPress_Spa_widgets'),
+				'label' => __('Centered Slides', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __('On', 'OBPress_SpecialOffers'),
-				'label_off' => __('Off', 'OBPress_SpecialOffers'),
+				'label_on' => __('On', 'OBPress_Demo_Widgets'),
+				'label_off' => __('Off', 'OBPress_Demo_Widgets'),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -342,7 +342,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_slides_per_view',
 			[
-				'label' => __('Slides Per View', 'OBPress_Spa_widgets'),
+				'label' => __('Slides Per View', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => ['slides'],
 				'range' => [
@@ -362,7 +362,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_slider_space_between',
 			[
-				'label' => __('Space Between Slides', 'OBPress_Spa_widgets'),
+				'label' => __('Space Between Slides', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -382,7 +382,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_slider_transition',
 			[
-				'label' => __('Slider Transition(seconds)', 'OBPress_Spa_widgets'),
+				'label' => __('Slider Transition(seconds)', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => ['s'],
 				'range' => [
@@ -402,13 +402,13 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_slide_pagination',
 			[
-				'label' => __('Slider Pagination', 'OBPress_Spa_widgets'),
+				'label' => __('Slider Pagination', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'lines',
 				'options' => [
-					'lines'  => __('Lines', 'plugin-domain'),
-					'bullets' => __('Bullets', 'plugin-domain'),
-					'disabled' => __('Disabled', 'plugin-domain')
+					'lines'  => __('Lines', 'OBPress_Demo_Widgets'),
+					'bullets' => __('Bullets', 'OBPress_Demo_Widgets'),
+					'disabled' => __('Disabled', 'OBPress_Demo_Widgets')
 				],
 			]
 		);
@@ -416,7 +416,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_pagination_bullet_color',
 			[
-				'label' => __('Pagination Bullet Color', 'OBPress_Spa_widgets'),
+				'label' => __('Pagination Bullet Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
@@ -429,7 +429,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_pagination_bullet_back_icon',
 			[
-				'label' => __('Back Icon', 'OBPress_Spa_widgets'),
+				'label' => __('Back Icon', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
@@ -437,7 +437,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_pagination_bullet_next_icon',
 			[
-				'label' => __('Next Icon', 'OBPress_Spa_widgets'),
+				'label' => __('Next Icon', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);

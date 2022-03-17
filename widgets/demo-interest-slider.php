@@ -27,7 +27,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 
 	public function get_title()
 	{
-		return __('Demo Interest Slider', 'plugin-name');
+		return __('Demo Interest Slider', 'OBPress_Demo_Widgets');
 	}
 
 	public function get_icon()
@@ -45,7 +45,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __('Content', 'OBPress_Spa_widgets'),
+				'label' => __('Content', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -54,36 +54,36 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 
 		$repeater->add_control(
 			'obpress_interest_slider_title', [
-				'label' => __( 'Slider Title', 'OBPress_Spa_widgets' ),
+				'label' => __( 'Slider Title', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __( 'Slider Title' , 'OBPress_Spa_widgets' ),
+				'default' => __( 'Slider Title' , 'OBPress_Demo_Widgets' ),
 				'label_block' => true,
 			]
 		);
 
 		$repeater->add_control(
 			'obpress_interest_slider_description', [
-				'label' => __( 'Slider Description', 'OBPress_Spa_widgets' ),
+				'label' => __( 'Slider Description', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::WYSIWYG,
-				'default' => __( 'Slider Description' , 'OBPress_Spa_widgets' ),
+				'default' => __( 'Slider Description' , 'OBPress_Demo_Widgets' ),
 				'show_label' => false,
 			]
 		);
 
 		$repeater->add_control(
 			'obpress_interest_link_text', [
-				'label' => __( 'Slider Link Text', 'OBPress_Spa_widgets' ),
+				'label' => __( 'Slider Link Text', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __( 'Slider Link Text' , 'OBPress_Spa_widgets' ),
+				'default' => __( 'Slider Link Text' , 'OBPress_Demo_Widgets' ),
 				'label_block' => true,
 			]
 		);		
 
 		$repeater->add_control(
 			'obpress_interest_link', [
-				'label' => __( 'Slider Link', 'OBPress_Spa_widgets' ),
+				'label' => __( 'Slider Link', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __( 'Slider Link' , 'OBPress_Spa_widgets' ),
+				'default' => __( 'Slider Link' , 'OBPress_Demo_Widgets' ),
 				'label_block' => true,
 			]
 		);
@@ -91,7 +91,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$repeater->add_control(
 			'obpress_interest_image',
 			[
-				'label' => __( 'Choose Interest Image', 'OBPress_Spa_widgets' ),
+				'label' => __( 'Choose Interest Image', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -102,21 +102,21 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_slider_content',
 			[
-				'label' => __( 'Interest Slider', 'plugin-domain' ),
+				'label' => __( 'Interest Slider', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'obpress_interest_slider_title' => __( 'Test Title1', 'plugin-domain' ),
-						'list_content' => __( 'Item content. Click the edit button to change this text.', 'plugin-domain' ),
+						'obpress_interest_slider_title' => __( 'Test Title1', 'OBPress_Demo_Widgets' ),
+						'list_content' => __( 'Item content. Click the edit button to change this text.', 'OBPress_Demo_Widgets' ),
 					],
 					[
-						'obpress_interest_slider_title' => __( 'Test Title2', 'plugin-domain' ),
-						'list_content' => __( 'Item content. Click the edit button to change this text.', 'plugin-domain' ),
+						'obpress_interest_slider_title' => __( 'Test Title2', 'OBPress_Demo_Widgets' ),
+						'list_content' => __( 'Item content. Click the edit button to change this text.', 'OBPress_Demo_Widgets' ),
 					],
 					[
-						'obpress_interest_slider_title' => __( 'Test Title3', 'plugin-domain' ),
-						'list_content' => __( 'Item content. Click the edit button to change this text.', 'plugin-domain' ),
+						'obpress_interest_slider_title' => __( 'Test Title3', 'OBPress_Demo_Widgets' ),
+						'list_content' => __( 'Item content. Click the edit button to change this text.', 'OBPress_Demo_Widgets' ),
 					]								
 				],
 				'title_field' => '{{{ obpress_interest_slider_title }}}',
@@ -128,7 +128,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'obpress_interest_slider_section',
 			[
-				'label' => __('Slider', 'OBPress_SpecialOffers'),
+				'label' => __('Slider', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -137,10 +137,10 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_allow_loop',
 			[
-				'label' => __('Allow Image Looping', 'OBPress_SpecialOffers'),
+				'label' => __('Allow Image Looping', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __('On', 'OBPress_SpecialOffers'),
-				'label_off' => __('Off', 'OBPress_SpecialOffers'),
+				'label_on' => __('On', 'OBPress_Demo_Widgets'),
+				'label_off' => __('Off', 'OBPress_Demo_Widgets'),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -149,10 +149,10 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_center_slides',
 			[
-				'label' => __('Centered Slides', 'OBPress_SpecialOffers'),
+				'label' => __('Centered Slides', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __('On', 'OBPress_SpecialOffers'),
-				'label_off' => __('Off', 'OBPress_SpecialOffers'),
+				'label_on' => __('On', 'OBPress_Demo_Widgets'),
+				'label_off' => __('Off', 'OBPress_Demo_Widgets'),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -161,7 +161,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_slides_per_view',
 			[
-				'label' => __('Slides Per View Desktop', 'OBPress_SpecialOffers'),
+				'label' => __('Slides Per View Desktop', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => ['slides'],
 				'range' => [
@@ -181,7 +181,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_slides_per_view_mobile',
 			[
-				'label' => __('Slides Per View Mobile', 'OBPress_SpecialOffers'),
+				'label' => __('Slides Per View Mobile', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => ['slides'],
 				'range' => [
@@ -201,7 +201,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_slider_space_between',
 			[
-				'label' => __( 'Space Between Slides Desktop', 'OBPress_SpecialOffers' ),
+				'label' => __( 'Space Between Slides Desktop', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px'],
 				'range' => [
@@ -221,7 +221,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_slider_space_between_mobile',
 			[
-				'label' => __( 'Space Between Slides Mobile', 'OBPress_SpecialOffers' ),
+				'label' => __( 'Space Between Slides Mobile', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px'],
 				'range' => [
@@ -241,7 +241,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_slider_transition',
 			[
-				'label' => __( 'Slider Transition(seconds)', 'OBPress_SearchBarPlugin' ),
+				'label' => __( 'Slider Transition(seconds)', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 's'],
 				'range' => [
@@ -261,13 +261,13 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_slide_pagination',
 			[
-				'label' => __( 'Slider Pagination', 'OBPress_SearchBarPlugin' ),
+				'label' => __( 'Slider Pagination', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'lines',
 				'options' => [
-					'lines'  => __( 'Lines', 'plugin-domain' ),
-					'bullets' => __( 'Bullets', 'plugin-domain' ),
-					'disabled' => __( 'Disabled', 'plugin-domain')
+					'lines'  => __( 'Lines', 'OBPress_Demo_Widgets' ),
+					'bullets' => __( 'Bullets', 'OBPress_Demo_Widgets' ),
+					'disabled' => __( 'Disabled', 'OBPress_Demo_Widgets')
 				],
 			]
 		);
@@ -275,14 +275,14 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_number_of_slides',
 			[
-				'label' => __( 'Number of Pagination Bullets', 'OBPress_SearchBarPlugin' ),
+				'label' => __( 'Number of Pagination Bullets', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => '5',
 				'options' => [
-					'2'  => __( '2', 'plugin-domain' ),
-					'3' => __( '3', 'plugin-domain' ),
-					'4' => __( '4', 'plugin-domain'),
-					'5' => __( '5', 'plugin-domain')
+					'2'  => __( '2', 'OBPress_Demo_Widgets' ),
+					'3' => __( '3', 'OBPress_Demo_Widgets' ),
+					'4' => __( '4', 'OBPress_Demo_Widgets'),
+					'5' => __( '5', 'OBPress_Demo_Widgets')
 				],
 			]
 		);
@@ -290,7 +290,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_pagination_bullet_color',
 			[
-				'label' => __('Pagination Bullet Color', 'OBPress_SpecialOffers'),
+				'label' => __('Pagination Bullet Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
@@ -303,7 +303,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_pagination_bullet_back_icon',
 			[
-				'label' => __( 'Back Icon', 'text-domain' ),
+				'label' => __( 'Back Icon', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
@@ -311,7 +311,7 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_interest_pagination_bullet_next_icon',
 			[
-				'label' => __( 'Next Icon', 'text-domain' ),
+				'label' => __( 'Next Icon', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
