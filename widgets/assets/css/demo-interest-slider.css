@@ -153,22 +153,22 @@ div.obpress-offer-partial-left::before {
   text-align: center;
 }
 
-.obpress-offer-description {
+.obpress-interest-description {
 }
 
-.obpress-offer-description p,
-.obpress-offer-description h5 {
+.obpress-interest-description p,
+.obpress-interest-description h5 {
   margin: 0;
 }
 
-.obpress-offer-description h5 {
+.obpress-interest-description h5 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
   color: #222222;
 }
 
-.obpress-offer-description p {
+.obpress-interest-description p {
   line-height: 20px;
   color: #2c2f33;
   overflow: hidden;
@@ -270,13 +270,13 @@ div.obpress-offer-partial-left::before {
     padding: 15px 11px 20px 11px;
   }
   
-  .obpress-interest-slider-holder .obpress-offer-description h5 {
+  .obpress-interest-slider-holder .obpress-interest-description h5 {
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 15px;
   }
 
-  .obpress-interest-slider-holder .obpress-offer-description p {
+  .obpress-interest-slider-holder .obpress-interest-description p {
     font-size: 10px;
     line-height: 16px;
     margin: 0px;

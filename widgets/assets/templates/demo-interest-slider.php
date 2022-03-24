@@ -18,7 +18,7 @@
                     </div>
                     <div class="obpress-interest-info-holder">
                         <div class="obpress-interest-info">
-                            <div class="obpress-offer-description">
+                            <div class="obpress-interest-description">
                                 <h5><?= $interest_slide['obpress_interest_slider_title'] ?></h5>
                                 <p><?= substr($interest_slide['obpress_interest_slider_description'], 0, 180) . '...' ?></p>
                             </div>
