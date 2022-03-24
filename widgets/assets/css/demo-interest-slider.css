@@ -91,7 +91,7 @@
   margin-right: 0px;
 }
 
-.obpress-offer-info-holder {
+.obpress-interest-info-holder {
   background-color: #fff;
   max-width: 85%;
   margin: -129px auto 22px auto;
@@ -99,11 +99,11 @@
 
 .obpress-interest-slider-swiper
   .swiper-slide:not(.swiper-slide-active)
-  .obpress-offer-info-holder {
+  .obpress-interest-info-holder {
   opacity: 0;
 }
 
-.obpress-offer-info-holder {
+.obpress-interest-info-holder {
   -webkit-transition: opacity 0.5s ease-in;
   -moz-transition: opacity 0.5s ease-in;
   -o-transition: opacity 0.5s ease-in;
@@ -144,7 +144,7 @@ div.obpress-offer-partial-left::before {
   box-shadow: 0px 3px 6px #00000029;
 }
 
-.obpress-offer-info {
+.obpress-interest-info {
   display: flex;
   justify-content: space-between;
   padding: 20px 27px 27px 30px;
@@ -261,12 +261,12 @@ div.obpress-offer-partial-left::before {
     min-height: 185px;
   }
 
-  .obpress-interest-slider-holder .obpress-offer-info-holder {
+  .obpress-interest-slider-holder .obpress-interest-info-holder {
     max-width: calc(100% - 23px);
     margin: -53px auto 0px auto;
   }
 
-  .obpress-interest-slider-holder .obpress-offer-info {
+  .obpress-interest-slider-holder .obpress-interest-info {
     padding: 15px 11px 20px 11px;
   }
   
