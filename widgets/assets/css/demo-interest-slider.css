@@ -212,7 +212,7 @@ div.obpress-offer-partial-left::before {
   line-height: 24px;
 }
 
-.obpress-offer-more {
+.obpress-interest-more {
   color: #4B8CF4;
   font-size: 16px;
   text-decoration: underline!important;
@@ -282,7 +282,7 @@ div.obpress-offer-partial-left::before {
     margin: 0px;
   }
 
-  .obpress-interest-slider-holder .obpress-offer-more {
+  .obpress-interest-slider-holder .obpress-interest-more {
     font-size: 12px;
     font-weight: bold;
     margin-top: 8px;
