@@ -4,7 +4,7 @@
   Plugin uri: www.zyrgon.net
   Text Domain: OBPress_Demo_Widgets
   Description: Widgets to OBPress
-  Version: 0.0.5
+  Version: 0.0.6
   Author: Zyrgon
   Author uri: www.zyrgon.net
   License: GPlv2 or Later
@@ -15,7 +15,11 @@ if(get_option('obpress_api_set') == true){
     require_once('elementor/init.php');
 }
 
-
+add_action( 'init', 'obpress_demo_widgets_load_textdomain' );
+ 
+function obpress_demo_widgets_load_textdomain() {
+    load_plugin_textdomain( 'OBPress_Demo_Widgets', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+}
 
 // TODO, MAKE GIT BRANCH, CONNECT WITH UPDATE CHECKER
 
