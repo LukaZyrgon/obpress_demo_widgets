@@ -10,6 +10,12 @@
     position: relative;
 }
 
+.obpress-spa-offer-holder-title.desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .obpress-spa-offer-holder-type {
     text-transform: uppercase;
     color: #777777;
@@ -51,14 +57,18 @@
     letter-spacing: 2.8px;
     color: #fff;
     font-family: "Montserrat";
-    margin-left: auto;
-    margin-right: auto;
     padding: 15px 48px;
     cursor: pointer;
+    width: fit-content;
+    align-self: center;
     /* width: 200px; */
-    position: absolute;
+    /* position: absolute;
     bottom: 0px;
-    left: calc(50% - 100px);
+    left: calc(50% - 100px); */
+}
+
+.obpress-spa-widget-button:hover {
+  color: #fff;
 }
 
 /* .obpress-spa-swiper .swiper-slide img {
@@ -96,6 +106,11 @@
   margin-top: 0px;
 }
 
+.obpress-spa-swiper-nav .swiper-button-prev::after,
+.obpress-spa-swiper-nav .swiper-button-next::after {
+  content: unset;
+}
+
 .obpress-spa-swiper-nav .swiper-button-prev {
   background-image: url('../icons/back.svg');
   margin-right: 80px;
@@ -121,6 +136,7 @@
 
 .obpress-spa-swiper-nav .swiper-pagination-bullet {
   margin-right: 10px;
+  background-color: #000000;
 }
 
 .obpress-spa-swiper-nav .swiper-pagination-bullet:last-child {

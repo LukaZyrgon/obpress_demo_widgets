@@ -60,6 +60,11 @@
   margin-top: 0px;
 }
 
+.obpress-interest-slider-holder .obpress-swiper-prev::after,
+.obpress-interest-slider-holder .obpress-swiper-next::after {
+  content: unset;
+}
+
 .obpress-swiper-prev {
   background-image: url(../icons/back.svg);
   margin-right: 80px;
@@ -212,7 +217,7 @@ div.obpress-offer-partial-left::before {
   line-height: 24px;
 }
 
-.obpress-interest-more {
+.obpress-offer-button .obpress-interest-more {
   color: #4B8CF4;
   font-size: 16px;
   text-decoration: underline!important;

@@ -77,17 +77,17 @@
 .obpress-spa-top-time {
     margin-top: 0px;
     margin-bottom: 11px;
+    color: #2C2F33;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
 }
 
-
 .obpress-spa-top-time strong {
-    color: #2C2F33;
     font-weight: 800;
     font-size: 14px;
     line-height: 18px;
 }
-
-
 
 .obpress-spa-top-widget-button {
     background-color: #000000;
@@ -98,11 +98,14 @@
     color: #fff;
     font-family: "Montserrat";
     padding: 15px 35.5px 15px 35.5px;
-    margin: 27px auto 0px auto;
+    margin-top: 27px;
+    width: fit-content;
+    align-self: center;
 }
 
 .obpress-spa-top-widget-button:hover {
     cursor: pointer;
+    color: #fff;
 }
 
 .obpress-spa-top-swiper {
@@ -131,7 +134,7 @@
 }
 
 .obpress-spa-top-swiper .swiper-slide {
-    height: 166px;
+    height: 165px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -145,12 +148,12 @@
     -webkit-align-items: center;
     align-items: center;
     position: relative;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
-.obpress-spa-top-swiper .swiper-slide:nth-child(3n+2) {
+/* .obpress-spa-top-swiper .swiper-slide:nth-child(3n+2) {
     margin: 9px 0px !important;
-}
+} */
 
 .obpress-spa-top-swiper .obpress-swiper-overlay {
     width: 100%;
@@ -219,28 +222,45 @@
     margin-top: 0px;    
 }
 
+.obpress-spa-top-swiper-nav .swiper-button-prev::after,
+.obpress-spa-top-swiper-nav .swiper-button-next::after {
+    content: unset;
+}
+
 .obpress-spa-top-swiper-nav .swiper-button-prev {
     background-image: url(../icons/back.svg);
-    margin-right: 80px;    
+    margin-right: 65px;    
 }
 
 .obpress-spa-top-swiper-nav .swiper-button-next {
     background-image: url(../icons/next.svg);
-    margin-left: 80px;
+    margin-left: 65px;
+}
+
+.obpress-spa-top-swiper-nav .swiper-pagination {
+    position: static;
 }
 
 .obpress-spa-top-swiper-nav .swiper-pagination-bullet {
+    margin-right: 10px;    
+    background-color: #000000;
+}
+
+.obpress-spa-top-swiper-nav .lines .swiper-pagination-bullet {
     border-radius: 0px;
     width: 20px;
-    margin-right: 10px;    
 }
 
 .obpress-spa-top-swiper-nav .swiper-pagination-bullet:last-child {
     margin-right: 0px;
 }
 
-.obpress-spa-top-swiper-nav .swiper-pagination-bullet-active {
+.obpress-spa-top-swiper-nav .lines .swiper-pagination-bullet-active {
     width: 30px;
+}
+
+.obpress-spa-top-swiper-nav .swiper-pagination.disabled {
+    display: none;
 }
 
 /* MOBILE */ 

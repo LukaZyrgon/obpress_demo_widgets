@@ -167,48 +167,32 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'color_section',
+			'obpress_custom_slider_top_info_section',
 			[
-				'label' => __('Colors', 'OBPress_Demo_Widgets'),
+				'label' => __('Info Section', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
-			'obpress_custom_slider_top_type_color',
+			'obpress_custom_slider_top_info_section_width',
 			[
-				'label' => __('Demo Type Color', 'OBPress_Demo_Widgets'),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'input_type' => 'color',
-				'default' => '#777777',
-				'selectors' => [
-					'.obpress-spa-offer-holder-title p' => 'color: {{obpress_so_box_ribbon_background_color}}',
+				'label' => __( 'Info Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ '%' ],
+				'range' => [
+					'%' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
 				],
-			]
-		);
-
-		$this->add_control(
-			'obpress_custom_slider_top_title_color',
-			[
-				'label' => __('Demo Title Color', 'OBPress_Demo_Widgets'),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'input_type' => 'color',
-				'default' => '#000',
-				'selectors' => [
-					'.obpress-spa-offer-holder-title h2' => 'color: {{obpress_custom_slider_top_title_color}}',
+				'default' => [
+					'unit' => '%',
+					'size' => 100,
 				],
-			]
-		);
-
-		$this->add_control(
-			'obpress_custom_slider_top_description_color',
-			[
-				'label' => __('Demo Description Color', 'OBPress_Demo_Widgets'),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'input_type' => 'color',
-				'default' => '#000',
 				'selectors' => [
-					'.obpress-spa-offer-holder-description' => 'color: {{obpress_custom_slider_top_description_color}}',
+					'.obpress-spa-offer-holder .obpress-spa-offer-holder-title' => 'width: {{SIZE}}%',
 				],
 			]
 		);
@@ -216,37 +200,217 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'typography_section',
+			'obpress_custom_slider_top_info_content_section',
 			[
-				'label' => __('Typography', 'OBPress_Demo_Widgets'),
+				'label' => __('Content Section', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
+		$this->add_control(
+			'obpress_custom_slider_top_type_color',
+			[
+				'label' => __('Type Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#777777',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-offer-holder-type' => 'color: {{obpress_custom_slider_top_type_color}}',
+				],
+			]
+		);	
+		
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'so_buttons_typography',
-				'label' => __('Demo Type', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-offer-holder-title p',
+				'name' => 'obpress_custom_slider_top_type_typography',
+				'label' => __('Type Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-offer-holder .obpress-spa-offer-holder-type',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '16',
+						],
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'letter_spacing' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '3.2',
+						],
+					],
+					'line_height' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '26',
+						],
+					],
+					'text_transform' => [
+						'default' => 'uppercase',
+					],
+				],
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
+		$this->add_control(
+			'obpress_custom_slider_top_type_margin',
 			[
-				'name' => 'so_buttons_typography',
-				'label' => __('Demo Title', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-offer-holder-title h2',
+				'label' => __( 'Location Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '50',
+					'right' => '0',
+					'bottom' => '16',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-offer-holder-type' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
+		$this->add_control(
+			'obpress_custom_slider_top_title_color',
+			[
+				'label' => __('Title Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000000',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-offer-holder-title h2' => 'color: {{obpress_custom_slider_top_title_color}}',
+				],
+			]
+		);	
+		
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'so_buttons_typography',
-				'label' => __('Demo Title', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-offer-holder-description',
+				'name' => 'obpress_custom_slider_top_title_typography',
+				'label' => __('Title Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-offer-holder .obpress-spa-offer-holder-title h2',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '40',
+						],
+					],
+					'font_weight' => [
+						'default' => '700',
+					],
+					'line_height' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '55',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_title_margin',
+			[
+				'label' => __( 'Title Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '94',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-offer-holder-title h2' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_description_color',
+			[
+				'label' => __('Description Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000000',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-offer-holder-description' => 'color: {{obpress_custom_slider_top_description_color}}',
+				],
+			]
+		);	
+		
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_custom_slider_top_description_typography',
+				'label' => __('Description Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-offer-holder .obpress-spa-offer-holder-description',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '14',
+						],
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'letter_spacing' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '0',
+						],
+					],
+					'line_height' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '30',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_description_margin',
+			[
+				'label' => __( 'Description Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '75',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-offer-holder-description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -261,14 +425,78 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
+			'obpress_custom_slider_top_button_button_width',
+			[
+				'label' => esc_html__( 'Custom Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'OBPress_Demo_Widgets' ),
+				'label_off' => esc_html__( 'Hide', 'OBPress_Demo_Widgets' ),
+				'return_value' => 'custom_width',
+				'default' => '',
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_button_width',
+			[
+				'label' => __( 'Button Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ '%' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => '%',
+					'size' => 100,
+				],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-widget-button' => 'width: {{SIZE}}%',
+				],
+				'condition' => [
+					'obpress_custom_slider_top_button_button_width' => 'custom_width',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'obpress_custom_slider_top_button_alignment',
+			[
+				'label' => __( 'Alignment', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'flex-start' => [
+						'title' => __( 'Left', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'flex-end' => [
+						'title' => __( 'Right', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-widget-button' => 'align-self: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
 			'obpress_custom_slider_top_button_background_color',
 			[
-				'label' => __('Button Background Color', 'OBPress_Demo_Widgets'),
+				'label' => __('Background Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
 				'selectors' => [
-					'.obpress-spa-widget-button' => 'background-color: {{obpress_so_button_background_color}}'
+					'.obpress-spa-offer-holder .obpress-spa-widget-button' => 'background-color: {{obpress_custom_slider_top_button_background_color}}'
 				],
 			]
 		);
@@ -276,12 +504,12 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_slider_top_button_text_color',
 			[
-				'label' => __('Button Text Color', 'OBPress_Demo_Widgets'),
+				'label' => __('Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#fff',
 				'selectors' => [
-					'.obpress-spa-widget-button' => 'color: {{obpress_so_button_text_color}}'
+					'.obpress-spa-offer-holder .obpress-spa-widget-button' => 'color: {{obpress_custom_slider_top_button_text_color}}'
 				],
 			]
 		);
@@ -289,9 +517,51 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'obpress_custom_slider_top_typography',
+				'name' => 'obpress_custom_slider_top_button_typography',
 				'label' => __('Typography', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-widget-button',
+				'selector' => '.obpress-spa-offer-holder .obpress-spa-widget-button',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '14',
+						],
+					],
+					'font_weight' => [
+						'default' => '700',
+					],
+					'letter_spacing' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '2.8',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_button_padding',
+			[
+				'label' => __( 'Padding', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '15',
+					'right' => '48',
+					'bottom' => '15',
+					'left' => '48',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-widget-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -300,7 +570,54 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			[
 				'name' => 'border',
 				'label' => __('Border', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-widget-button',
+				'selector' => '.obpress-spa-offer-holder .obpress-spa-widget-button',
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_button_background_hover_color',
+			[
+				'label' => __('Background Hover Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-widget-button:hover' => 'background-color: {{obpress_custom_slider_top_button_background_hover_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_button_text_hover_color',
+			[
+				'label' => __('Hover Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-widget-button:hover' => 'color: {{obpress_custom_slider_top_button_text_hover_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_button_hover_transition',
+			[
+				'label' => __( 'Transition', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 0.3,
+				],
+				'range' => [
+					'px' => [
+						'max' => 3,
+						'step' => 0.1,
+					],
+				],
+				'render_type' => 'ui',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-widget-button' => 'transition: {{SIZE}}s',
+				],
 			]
 		);
 
@@ -435,10 +752,162 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
+			'obpress_custom_slider_top_pagination_bullet_back_icon_margin',
+			[
+				'label' => __( 'Back Icon Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '80',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav .swiper-button-prev' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
 			'obpress_custom_slider_top_pagination_bullet_next_icon',
 			[
 				'label' => __('Next Icon', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::ICONS,
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_pagination_bullet_next_icon_margin',
+			[
+				'label' => __( 'Next Icon Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '80',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav .swiper-button-next' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_pagination_margin',
+			[
+				'label' => __( 'Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '10',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav .swiper-pagination-bullet' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_pagination_active_width',
+			[
+				'label' => __( 'Active Pagination Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 30,
+				],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-lines .swiper-pagination-bullet-active' => 'width: {{SIZE}}px!important',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_pagination_width',
+			[
+				'label' => __( 'Pagination Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-lines .swiper-pagination-bullet' => 'width: {{SIZE}}px',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_pagination_height',
+			[
+				'label' => __( 'Pagination Height', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 8,
+				],
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-lines .swiper-pagination-bullet' => 'height: {{SIZE}}px',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'obpress_custom_slider_top_pagination_alignment',
+			[
+				'label' => __( 'Pagination Horizontal Align', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'flex-start' => [
+						'title' => __( 'Left', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'flex-end' => [
+						'title' => __( 'Right', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav' => 'justify-content: {{VALUE}}',
+				],
 			]
 		);
 

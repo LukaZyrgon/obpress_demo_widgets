@@ -322,7 +322,18 @@ class Demo_Interest_Slider extends \Elementor\Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
-		// var_dump($settings);
+		
+		$prevIcon = "url('../icons/back.svg')";
+		$nextIcon = "url('../icons/next.svg')";
+
+		if (isset($settings['obpress_interest_pagination_bullet_back_icon']['value']['url']) && !empty($settings['obpress_interest_pagination_bullet_back_icon']['value']['url'])) {
+			$prevIcon = $settings['obpress_interest_pagination_bullet_back_icon']['value']['url'];
+		}
+
+		if (isset($settings['obpress_interest_pagination_bullet_next_icon']['value']['url']) && !empty($settings['obpress_interest_pagination_bullet_next_icon']['value']['url'])) {
+			$nextIcon = $settings['obpress_interest_pagination_bullet_next_icon']['value']['url'];
+		}
+
 		require_once(WP_PLUGIN_DIR . '/OBPress_Demo_Widgets/widgets/assets/templates/demo-interest-slider.php');
 	}
 }

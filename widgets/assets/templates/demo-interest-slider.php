@@ -35,10 +35,10 @@
         </div>
         <!-- If we need pagination -->
         <div class="obpress-swiper-nav">
-            <div class="swiper-button-prev obpress-swiper-prev" <?php if(!empty($prevIcon)){ echo 'style="background-image:<?= '. $prevIcon . '?>"';} ?>>
+            <div class="swiper-button-prev obpress-swiper-prev" <?php if(!empty($prevIcon)){ echo 'style="background-image: url('. $prevIcon . ')"';} ?>>
             </div>
             <div class="swiper-pagination obpress-swiper-pagination <?php if($settings['obpress_interest_slide_pagination'] == 'lines'){echo 'obpress-swiper-lines';} ?><?php if($settings_so['so_slide_pagination'] == 'disabled'){echo 'obpress-swiper-pagination-disabled';} ?>"></div>
-            <div class="swiper-button-next obpress-swiper-next" <?php if(!empty($nextIcon)){ echo 'style="background-image:<?= '. $nextIcon . '?>"';} ?>>
+            <div class="swiper-button-next obpress-swiper-next" <?php if(!empty($nextIcon)){ echo 'style="background-image: url('. $nextIcon . ')"';} ?>>
             </div>
         </div>
 

@@ -137,62 +137,314 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 
 
 		$this->start_controls_section(
-			'colors_section',
+			'info_section',
 			[
-				'label' => __('Colors', 'OBPress_Demo_Widgets'),
+				'label' => __('Info Section', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
-			'obpress_custom_demo_bot_content_background',
+			'obpress_spa_bot_info_section_padding',
 			[
-				'label' => __('Demo Content Background Color', 'OBPress_Demo_Widgets'),
+				'label' => __( 'Padding', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '42',
+					'right' => '117',
+					'bottom' => '42',
+					'left' => '135',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-info' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_section_bg_color',
+			[
+				'label' => __('Background Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#fff',
 				'selectors' => [
-					'.obpress-spa-top-widget-info' => 'background-color: {{obpress_custom_demo_bot_content_background}}',
+					'.obpress-spa-top-holder .obpress-spa-top-widget-info' => 'background-color: {{obpress_spa_bot_info_section_bg_color}}'
 				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'obpress_spa_bot_info_section_box_shadow',
+				'label' => esc_html__( 'Box Shadow', 'OBPress_Demo_Widgets' ),
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-widget-info',
+				'fields_options' => [
+					'box_shadow_type' => [ 
+						'default' =>'yes' 
+					],
+					'box_shadow' => [
+						'default' =>[
+							'horizontal' => 0,
+							'vertical' => 14,
+							'blur' => 24,
+							'color' => '#bead8e33'
+						]
+					]
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'obpress_spa_bot_info_section_text_alignment',
+			[
+				'label' => __( 'Text Align', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-info' => 'text-align: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_section_width',
+			[
+				'label' => __( 'Info Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 200,
+						'max' => 650,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 622,
+				],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-info' => 'max-width: {{SIZE}}px',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'info_section_contant',
+			[
+				'label' => __('Info Content Section', 'OBPress_Demo_Widgets'),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
 			'obpress_custom_demo_bot_content_location',
 			[
-				'label' => __('Demo Location Color', 'OBPress_Demo_Widgets'),
+				'label' => __('Location Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
 				'selectors' => [
-					'.obpress-spa-top-widget-info h4' => 'color: {{obpress_custom_demo_bot_content_location}}',
+					'.obpress-spa-top-holder .obpress-spa-top-widget-info h4' => 'color: {{obpress_custom_demo_bot_content_location}}',
 				],
 			]
-		);			
+		);	
+		
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_spa_bot_info_location_typography',
+				'label' => __('Loaction Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-widget-info h4',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '16',
+						],
+					],
+					'font_weight' => [
+						'default' => '500',
+					],
+					'letter_spacing' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '-0.48',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_location_margin',
+			[
+				'label' => __( 'Location Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '9',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-info h4' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->add_control(
 			'obpress_custom_demo_bot_content_title',
 			[
-				'label' => __('Demo Title Color', 'OBPress_Demo_Widgets'),
+				'label' => __('Title Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
 				'selectors' => [
-					'.obpress-spa-top-widget-info h3' => 'color: {{obpress_custom_demo_bot_content_title}}',
+					'.obpress-spa-top-holder .obpress-spa-top-widget-info h3' => 'color: {{obpress_custom_demo_bot_content_title}}',
 				],
 			]
 		);	
 
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_spa_bot_info_title_typography',
+				'label' => __('Title Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-widget-info h3',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '24',
+						],
+					],
+					'font_weight' => [
+						'default' => '700',
+					],
+					'letter_spacing' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '-0.72',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_title_margin',
+			[
+				'label' => __( 'Title Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '24',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-info h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->add_control(
 			'obpress_custom_demo_bot_content_desc',
 			[
-				'label' => __('Demo Description Color', 'OBPress_Demo_Widgets'),
+				'label' => __('Description Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#777777',
 				'selectors' => [
-					'.obpress-spa-top-description' => 'color: {{obpress_custom_demo_bot_content_desc}}',
-					'.obrpress-spa-top-time-title' => 'color: {{obpress_custom_demo_bot_content_desc}}'
+					'.obpress-spa-top-holder .obpress-spa-top-description' => 'color: {{obpress_custom_demo_bot_content_desc}}'
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_spa_bot_info_description_typography',
+				'label' => __('Description Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-description',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '16',
+						],
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'line_height' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '24',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_description_margin',
+			[
+				'label' => __( 'Description Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '25',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -200,12 +452,122 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_demo_bot_content_line',
 			[
-				'label' => __('Demo Line Color', 'OBPress_Demo_Widgets'),
+				'label' => __('Spacer Line Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#fff',
 				'selectors' => [
-					'.obpress-spa-top-line' => 'background-color: {{obpress_custom_demo_bot_content_line}}',
+					'.obpress-spa-top-holder .obpress-spa-top-line' => 'background-color: {{obpress_custom_demo_bot_content_line}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_spacer_line_height',
+			[
+				'label' => __( 'Spacer Line Height', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 50,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 1,
+				],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-line' => 'min-height: {{SIZE}}px;',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_spacer_line_width',
+			[
+				'label' => __( 'Spacer Line Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 650,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 224,
+				],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-line' => 'max-width: {{SIZE}}px;',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_date_title_color',
+			[
+				'label' => __('Date Title Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#707070',
+				'selectors' => [
+					'.obpress-spa-top-holder .obrpress-spa-top-time-title' => 'color: {{obpress_spa_bot_info_date_title_color}}'
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_spa_bot_info_date_title_typography',
+				'label' => __('Date Title Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-top-holder .obrpress-spa-top-time-title',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '14',
+						],
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'line_height' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '18',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_date_title_margin',
+			[
+				'label' => __( 'Date Title Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '10',
+					'right' => '0',
+					'bottom' => '16',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obrpress-spa-top-time-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -218,7 +580,39 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 				'input_type' => 'color',
 				'default' => '#2C2F33',
 				'selectors' => [
-					'.obpress-spa-top-time strong' => 'color: {{obpress_custom_demo_bot_days}}',
+					'.obpress-spa-top-holder .obpress-spa-top-time strong' => 'color: {{obpress_custom_demo_bot_days}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_spa_bot_info_date_days_typography',
+				'label' => __('Date Days Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-time strong',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '14',
+						],
+					],
+					'font_weight' => [
+						'default' => '800',
+					],
+					'line_height' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '18',
+						],
+					],
 				],
 			]
 		);
@@ -231,7 +625,58 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 				'input_type' => 'color',
 				'default' => '#2C2F33',
 				'selectors' => [
-					'.obpress-spa-top-time' => 'color: {{obpress_custom_demo_bot_hours}}',
+					'.obpress-spa-top-holder .obpress-spa-top-time' => 'color: {{obpress_custom_demo_bot_hours}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_spa_bot_info_date_hours_typography',
+				'label' => __('Date Hours Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-time',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '14',
+						],
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'line_height' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '18',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_spa_bot_info_date_title_margin',
+			[
+				'label' => __( 'Date Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '11',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-time' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -249,12 +694,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_demo_bot_button_background_color',
 			[
-				'label' => __('Button Background Color', 'OBPress_Demo_Widgets'),
+				'label' => __('Background Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
 				'selectors' => [
-					'.obpress-spa-top-widget-button' => 'background-color: {{obpress_custom_demo_bot_button_background_color}}'
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button' => 'background-color: {{obpress_custom_demo_bot_button_background_color}}'
 				],
 			]
 		);
@@ -262,12 +707,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 		$this->add_control(
 			'obpress_custom_demo_bot_button_text_color',
 			[
-				'label' => __('Button Text Color', 'OBPress_Demo_Widgets'),
+				'label' => __('Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#fff',
 				'selectors' => [
-					'.obpress-spa-top-widget-button' => 'color: {{obpress_custom_demo_bot_button_text_color}}'
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button' => 'color: {{obpress_custom_demo_bot_button_text_color}}'
 				],
 			]
 		);
@@ -275,9 +720,96 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'obpress_custom_slider_top_typography',
+				'name' => 'obpress_custom_demo_bot_button_typography',
 				'label' => __('Typography', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-top-widget-button',
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-widget-button',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '14',
+						],
+					],
+					'font_weight' => [
+						'default' => '700',
+					],
+					'letter_spacing' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '2.8',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_demo_bot_button_margin',
+			[
+				'label' => __( 'Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '27',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_demo_bot_button_padding',
+			[
+				'label' => __( 'Padding', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '15',
+					'right' => '35.5',
+					'bottom' => '15',
+					'left' => '35.5',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'obpress_custom_demo_bot_button_alignment',
+			[
+				'label' => __( 'Alignment', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'flex-start' => [
+						'title' => __( 'Left', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'flex-end' => [
+						'title' => __( 'Right', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button' => 'align-self: {{VALUE}}',
+				],
 			]
 		);
 
@@ -286,71 +818,92 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			[
 				'name' => 'border',
 				'label' => __('Border', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-top-widget-button',
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-widget-button',
 			]
 		);
 
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'obpress_custom_demo_bot_typography',
+		$this->add_control(
+			'obpress_custom_demo_bot_button_background_hover_color',
 			[
-				'label' => __('Typography', 'OBPress_Demo_Widgets'),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'label' => __('Background Hover Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button:hover' => 'background-color: {{obpress_custom_demo_bot_button_background_color}}'
+				],
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
+		$this->add_control(
+			'obpress_custom_demo_bot_button_text_hover_color',
 			[
-				'name' => 'obpress_custom_demo_bot_location',
-				'label' => __('Demo Location Typography', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-top-widget-info h4',
+				'label' => __('Hover Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button:hover' => 'color: {{obpress_custom_demo_bot_button_text_color}}'
+				],
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
+		$this->add_control(
+			'obpress_custom_demo_bot_button_hover_transition',
 			[
-				'name' => 'obpress_custom_demo_bot_title',
-				'label' => __('Demo Title Typography', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-top-widget-info h3',
+				'label' => __( 'Transition', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 0.3,
+				],
+				'range' => [
+					'px' => [
+						'max' => 3,
+						'step' => 0.1,
+					],
+				],
+				'render_type' => 'ui',
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button' => 'transition: {{SIZE}}s',
+				],
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
+		$this->add_control(
+			'obpress_custom_demo_bot_button_button_width',
 			[
-				'name' => 'obpress_custom_demo_bot_desc',
-				'label' => __('Demo Description Typography', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-top-description',
-			]
-		);		
-
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'obpress_custom_demo_bot_time_title',
-				'label' => __('Demo Time Title Typography', 'OBPress_Demo_Widgets'),
-				'selector' => '.obrpress-spa-top-time-title',
+				'label' => esc_html__( 'Custom Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'OBPress_Demo_Widgets' ),
+				'label_off' => esc_html__( 'Hide', 'OBPress_Demo_Widgets' ),
+				'return_value' => 'custom_width',
+				'default' => '',
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
+		$this->add_control(
+			'obpress_custom_demo_bot_button_width',
 			[
-				'name' => 'obpress_custom_demo_bot_days',
-				'label' => __('Demo Days Typography', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-top-time strong',
-			]
-		);
-
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'obpress_custom_demo_bot_hours',
-				'label' => __('Demo Hours Typography', 'OBPress_Demo_Widgets'),
-				'selector' => '.obpress-spa-top-time',
+				'label' => __( 'Button Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ '%' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => '%',
+					'size' => 100,
+				],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-widget-button' => 'width: {{SIZE}}%',
+				],
+				'condition' => [
+					'obpress_custom_demo_bot_button_button_width' => 'custom_width',
+				],
 			]
 		);
 
@@ -405,10 +958,90 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 					'size' => 0.2,
 				],
 				'selectors' => [
-					'.obpress-spa-top-swiper .obpress-swiper-overlay' => '-webkit-transition: opacity {{SIZE}}s ease-in',
+					'.obpress-spa-top-holder .obpress-spa-top-swiper .obpress-swiper-overlay' => '-webkit-transition: opacity {{SIZE}}s ease-in',
 				],				
 			]
-		);		
+		);
+		
+		$this->add_control(
+			'obpress_custom_demo_bot_overlay_text_color',
+			[
+				'label' => __('Text Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-swiper .obpress-swiper-overlay h4, .obpress-spa-top-holder .obpress-swiper-overlay p' => 'color: {{obpress_custom_demo_bot_overlay_text_color}}'
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_custom_demo_bot_overlay_title_typography',
+				'label' => __('Title Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-top-holder .obpress-spa-top-swiper .obpress-swiper-overlay h4',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '16',
+						],
+					],
+					'font_weight' => [
+						'default' => '700',
+					],
+					'letter_spacing' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '3.2',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'obpress_custom_demo_bot_overlay_hotel_name_typography',
+				'label' => __('Hotel Name Typography', 'OBPress_Demo_Widgets'),
+				'selector' => '.obpress-spa-top-holder .obpress-swiper-overlay p',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '16',
+						],
+					],
+					'font_weight' => [
+						'default' => '500',
+					],
+					'letter_spacing' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '-0.48',
+						],
+					],
+					'font-style' => [
+						'default' => 'italic',
+					]
+				],
+			]
+		);
 
 		$this->end_controls_section();
 
@@ -417,6 +1050,26 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			[
 				'label' => __('Slider', 'OBPress_Demo_Widgets'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_demo_bot_slides_per_view',
+			[
+				'label' => __('Slides Per View', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => ['slides'],
+				'range' => [
+					'slides' => [
+						'min' => 1,
+						'max' => 10,
+						'step' => 0.1,
+					]
+				],
+				'default' => [
+					'unit' => 'slides',
+					'size' => 1,
+				]
 			]
 		);
 
@@ -456,10 +1109,162 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
+			'obpress_custom_demo_bot_pagination_bullet_back_icon_margin',
+			[
+				'label' => __( 'Back Icon Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '65',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-swiper-nav .swiper-button-prev' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
 			'obpress_custom_demo_bot_pagination_bullet_next_icon',
 			[
 				'label' => __( 'Next Icon', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_demo_bot_pagination_bullet_next_icon_margin',
+			[
+				'label' => __( 'Next Icon Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '65',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-swiper-nav .swiper-button-next' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_demo_bot_pagination_margin',
+			[
+				'label' => __( 'Margin', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '10',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-swiper-nav .swiper-pagination-bullet' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_demo_bot_pagination_active_width',
+			[
+				'label' => __( 'Active Pagination Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 30,
+				],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-swiper-nav .lines .swiper-pagination-bullet-active' => 'width: {{SIZE}}px!important',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_demo_bot_pagination_width',
+			[
+				'label' => __( 'Pagination Width', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-swiper-nav .lines .swiper-pagination-bullet' => 'width: {{SIZE}}px',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_demo_bot_pagination_height',
+			[
+				'label' => __( 'Pagination Height', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 8,
+				],
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-swiper-nav .lines .swiper-pagination-bullet' => 'height: {{SIZE}}px',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'obpress_custom_demo_bot_pagination_alignment',
+			[
+				'label' => __( 'Pagination Horizontal Align', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'flex-start' => [
+						'title' => __( 'Left', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'flex-end' => [
+						'title' => __( 'Right', 'OBPress_Demo_Widgets' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'.obpress-spa-top-holder .obpress-spa-top-swiper-nav' => 'justify-content: {{VALUE}}',
+				],
 			]
 		);
 
@@ -469,7 +1274,6 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
-
 		$prevIcon = "url('../icons/back.svg')";
 		$nextIcon = "url('../icons/next.svg')";
 
@@ -482,9 +1286,7 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			$nextIcon = $settings['obpress_custom_demo_bot_pagination_bullet_next_icon']['value']['url'];
 		}
 
-		// check which page it is
-		global $wp;
-    	$current_url = $wp->request;
+		$pagination_type = $settings['obpress_custom_demo_bot_slide_pagination'];
 
 		require_once(WP_PLUGIN_DIR . '/OBPress_Demo_Widgets/widgets/assets/templates/demo-info-slider.php');
 	}
