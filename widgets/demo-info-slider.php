@@ -144,12 +144,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_section_padding',
 			[
 				'label' => __( 'Padding', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '42',
+					'right' => '117',
+					'bottom' => '42',
+					'left' => '135',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '42',
 					'right' => '117',
 					'bottom' => '42',
@@ -217,14 +225,16 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'icon' => 'eicon-text-align-right',
 					],
 				],
-				'default' => 'center',
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => 'center',
+				'mobile_default' => 'center',
 				'selectors' => [
 					'.obpress-spa-top-holder .obpress-spa-top-widget-info' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_section_width',
 			[
 				'label' => __( 'Info Width', 'OBPress_Demo_Widgets' ),
@@ -237,7 +247,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 622,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 622,
 				],
@@ -302,12 +317,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_location_margin',
 			[
 				'label' => __( 'Location Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '9',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '9',
@@ -366,12 +389,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_title_margin',
 			[
 				'label' => __( 'Title Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '24',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '24',
@@ -430,12 +461,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_description_margin',
 			[
 				'label' => __( 'Description Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '25',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '25',
@@ -462,7 +501,7 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_spacer_line_height',
 			[
 				'label' => __( 'Spacer Line Height', 'OBPress_Demo_Widgets' ),
@@ -475,7 +514,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 1,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 1,
 				],
@@ -485,7 +529,7 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_spacer_line_width',
 			[
 				'label' => __( 'Spacer Line Width', 'OBPress_Demo_Widgets' ),
@@ -498,7 +542,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 224,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 224,
 				],
@@ -553,12 +602,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_date_title_margin',
 			[
 				'label' => __( 'Date Title Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '10',
+					'right' => '0',
+					'bottom' => '16',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '10',
 					'right' => '0',
 					'bottom' => '16',
@@ -662,12 +719,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_spa_bot_info_date_title_margin',
 			[
 				'label' => __( 'Date Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '11',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '11',
@@ -749,12 +814,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_button_margin',
 			[
 				'label' => __( 'Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '27',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '27',
 					'right' => '0',
 					'bottom' => '0',
@@ -768,12 +841,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_button_padding',
 			[
 				'label' => __( 'Padding', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '15',
+					'right' => '35.5',
+					'bottom' => '15',
+					'left' => '35.5',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '15',
 					'right' => '35.5',
 					'bottom' => '15',
@@ -806,7 +887,9 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'icon' => 'eicon-text-align-right',
 					],
 				],
-				'default' => 'center',
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => 'center',
+				'mobile_default' => 'center',
 				'selectors' => [
 					'.obpress-spa-top-holder .obpress-spa-top-widget-button' => 'align-self: {{VALUE}}',
 				],
@@ -848,12 +931,16 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_button_hover_transition',
 			[
 				'label' => __( 'Transition', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'size' => 0.3,
+				],
+				'mobile_default' => [
 					'size' => 0.3,
 				],
 				'range' => [
@@ -881,7 +968,7 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_button_width',
 			[
 				'label' => __( 'Button Width', 'OBPress_Demo_Widgets' ),
@@ -894,7 +981,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => '%',
+					'size' => 100,
+				],
+				'mobile_default' => [
 					'unit' => '%',
 					'size' => 100,
 				],
@@ -917,7 +1009,7 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_overlay_opacity_control',
 			[
 				'label' => __('Hotels Overlay Opacity', 'OBPress_Demo_Widgets'),
@@ -930,7 +1022,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'step' => 0.01,
 					]
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'opacity',
+					'size' => 0.38,
+				],
+				'mobile_default' => [
 					'unit' => 'opacity',
 					'size' => 0.38,
 				],
@@ -1073,12 +1170,14 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_slide_pagination',
 			[
 				'label' => __( 'Pagination', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 'lines',
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => 'lines',
+				'mobile_default' => 'lines',
 				'options' => [
 					'lines'  => __( 'Lines', 'OBPress_Demo_Widgets' ),
 					'bullets' => __( 'Bullets', 'OBPress_Demo_Widgets' ),
@@ -1108,12 +1207,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_pagination_bullet_back_icon_margin',
 			[
 				'label' => __( 'Back Icon Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '65',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '65',
 					'bottom' => '0',
@@ -1135,12 +1242,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_pagination_bullet_next_icon_margin',
 			[
 				'label' => __( 'Next Icon Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '65',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '0',
@@ -1154,12 +1269,20 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_pagination_margin',
 			[
 				'label' => __( 'Margin', 'OBPress_Demo_Widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '10',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '10',
 					'bottom' => '0',
@@ -1173,7 +1296,7 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_pagination_active_width',
 			[
 				'label' => __( 'Active Pagination Width', 'OBPress_Demo_Widgets' ),
@@ -1186,7 +1309,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 30,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 30,
 				],
@@ -1196,7 +1324,7 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_pagination_width',
 			[
 				'label' => __( 'Pagination Width', 'OBPress_Demo_Widgets' ),
@@ -1209,7 +1337,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 20,
 				],
@@ -1219,7 +1352,7 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'obpress_custom_demo_bot_pagination_height',
 			[
 				'label' => __( 'Pagination Height', 'OBPress_Demo_Widgets' ),
@@ -1232,7 +1365,12 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => 8,
+				],
+				'mobile_default' => [
 					'unit' => 'px',
 					'size' => 8,
 				],
@@ -1261,7 +1399,9 @@ class Demo_Info_Slider extends \Elementor\Widget_Base
 						'icon' => 'eicon-text-align-right',
 					],
 				],
-				'default' => 'center',
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => 'center',
+				'mobile_default' => 'center',
 				'selectors' => [
 					'.obpress-spa-top-holder .obpress-spa-top-swiper-nav' => 'justify-content: {{VALUE}}',
 				],
