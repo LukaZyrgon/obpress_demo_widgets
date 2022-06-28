@@ -14,9 +14,9 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <?php if(isset($settings['obpress_custom_slider_top_gallery']) && !empty($settings['obpress_custom_slider_top_gallery'])): ?>
-                <?php foreach($settings['obpress_custom_slider_top_gallery'] as $image): ?>
+                <?php foreach($settings['obpress_custom_slider_top'] as $image): ?>
                     <div class="swiper-slide">
-                        <div class="obpress-spa-swiper-image" style="background-image:url(<?= $image['url'] ?>)">
+                        <div class="obpress-spa-swiper-image" style="background-image:url(<?= $image['obpress_custom_slider_top_gallery']['url'] ?>)">
                         </div>
                     </div>
                 <?php endforeach; ?>

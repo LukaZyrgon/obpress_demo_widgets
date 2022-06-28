@@ -49,11 +49,40 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$repeater = new \Elementor\Repeater();
+
+		$repeater->add_control(
 			'obpress_custom_slider_top_gallery',
 			[
-				'label' => __('Slider Images', 'OBPress_Demo_Widgets'),
-				'type' => \Elementor\Controls_Manager::GALLERY,
+				'label' => __('Slider Image', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top',
+			[
+				'label' => __( 'Slider Images', 'OBPress_Demo_Widgets' ),
+				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
+				'default' => [
+					[
+						'obpress_custom_slider_top_title' => __( 'Image', 'OBPress_Demo_Widgets' ),
+						'list_content' => __( 'Image. Click the edit button to change image.', 'OBPress_Demo_Widgets' ),
+					],
+					[
+						'obpress_custom_slider_top_title' => __( 'Image', 'OBPress_Demo_Widgets' ),
+						'list_content' => __( 'Image. Click the edit button to change image.', 'OBPress_Demo_Widgets' ),
+					],
+					[
+						'obpress_custom_slider_top_title' => __( 'Image', 'OBPress_Demo_Widgets' ),
+						'list_content' => __( 'Image. Click the edit button to change image.', 'OBPress_Demo_Widgets' ),
+					]										
+				],
+				'title_field' => '{{{ obpress_custom_slider_top_title }}}',
 			]
 		);
 
