@@ -33,6 +33,7 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
         // If we need pagination
         pagination: {
           el: ".obpress-spa-top-widget-gallery .swiper-pagination",
+          clickable: true
         },
 
         // Navigation arrows

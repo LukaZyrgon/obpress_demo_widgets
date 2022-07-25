@@ -65,6 +65,7 @@ jQuery(window).on("elementor/frontend/init", function () {
         // If we need pagination
         pagination: {
           el: ".obpress-interest-slider-swiper .swiper-pagination",
+          clickable: true
         },
 
         // Navigation arrows
