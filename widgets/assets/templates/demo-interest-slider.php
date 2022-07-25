@@ -31,7 +31,6 @@
                     </div>
                 </div>
             <?php endforeach; ?>
-            ...
         </div>
         <!-- If we need pagination -->
         <div class="obpress-swiper-nav">
