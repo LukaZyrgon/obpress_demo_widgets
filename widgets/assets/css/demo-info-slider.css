@@ -101,11 +101,13 @@
     margin-top: 27px;
     width: fit-content;
     align-self: center;
+    border: 1px solid #191919;
 }
 
 .obpress-spa-top-widget-button:hover {
     cursor: pointer;
-    color: #fff;
+    color: #191919;
+    background-color: #fff;
 }
 
 .obpress-spa-top-swiper {
@@ -227,13 +229,45 @@
     content: unset;
 }
 
+.swiper-button-prev svg {
+    transform: rotate(180deg);
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+    width: 100%;
+    height: 100%;
+}
+
+.custtom_bg_color {
+    fill: #000;
+    stroke: #000;
+    transition: 0.3s;
+}
+.custtom_color {
+    stroke: #fff;
+    transition: 0.3s;
+}
+
+.obpress-spa-top-swiper-nav svg:hover .custtom_bg_color {
+    stroke: #000;
+}
+
+.obpress-spa-top-swiper-nav svg:hover .custtom_color {
+    stroke: #000;
+}
+
+.obpress-spa-top-swiper-nav svg:hover .custtom_bg_color {
+    fill: #fff;
+}
+
 .obpress-spa-top-swiper-nav .swiper-button-prev {
-    background-image: url(../icons/back.svg);
+    background-image: unset;
     margin-right: 65px;    
 }
 
 .obpress-spa-top-swiper-nav .swiper-button-next {
-    background-image: url(../icons/next.svg);
+    background-image: unset;
     margin-left: 65px;
 }
 

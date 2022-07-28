@@ -559,7 +559,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 				'label' => __('Background Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#000',
+				'default' => '#191919',
 				'selectors' => [
 					'.obpress-spa-offer-holder .obpress-spa-widget-button' => 'background-color: {{obpress_custom_slider_top_button_background_color}}'
 				],
@@ -653,7 +653,7 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 				'label' => __('Background Hover Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#000',
+				'default' => '#fff',
 				'selectors' => [
 					'.obpress-spa-offer-holder .obpress-spa-widget-button:hover' => 'background-color: {{obpress_custom_slider_top_button_background_hover_color}}'
 				],
@@ -666,9 +666,22 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 				'label' => __('Hover Color', 'OBPress_Demo_Widgets'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#fff',
+				'default' => '#191919',
 				'selectors' => [
 					'.obpress-spa-offer-holder .obpress-spa-widget-button:hover' => 'color: {{obpress_custom_slider_top_button_text_hover_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_button_hover_border_color',
+			[
+				'label' => __('Hover Border Color', 'OBPress_Demo_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#191919',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-widget-button:hover' => 'border-color: {{obpress_custom_slider_top_button_hover_border_color}}'
 				],
 			]
 		);
@@ -818,14 +831,6 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'obpress_custom_slider_top_pagination_bullet_back_icon',
-			[
-				'label' => __('Back Icon', 'OBPress_Demo_Widgets'),
-				'type' => \Elementor\Controls_Manager::ICONS,
-			]
-		);
-
 		$this->add_responsive_control(
 			'obpress_custom_slider_top_pagination_bullet_back_icon_margin',
 			[
@@ -853,14 +858,6 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'obpress_custom_slider_top_pagination_bullet_next_icon',
-			[
-				'label' => __('Next Icon', 'OBPress_Demo_Widgets'),
-				'type' => \Elementor\Controls_Manager::ICONS,
-			]
-		);
-
 		$this->add_responsive_control(
 			'obpress_custom_slider_top_pagination_bullet_next_icon_margin',
 			[
@@ -884,6 +881,107 @@ class Demo_Info_Gallery extends \Elementor\Widget_Base
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
 					'.obpress-spa-offer-holder .obpress-spa-swiper-nav .swiper-button-next' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_next_and_previous_buttons_hover_transition',
+			[
+				'label' => __( 'Buttons Hover Transition(seconds)', 'OBPress_General_Widgets' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 's'],
+				'range' => [
+					's' => [
+						'min' => 0,
+						'max' => 5,
+						'step' => 0.1,
+					]
+				],
+				'default' => [
+					'unit' => 's',
+					'size' => 0.3,
+				],
+				'selectors' => [
+					'.obpress-spa-offer-holder svg .custtom_bg_color, .obpress-spa-offer-holder svg .custtom_color' => 'transition: {{SIZE}}s',
+				]
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_next_and_previous_buttons_bg_color',
+			[
+				'label' => __('Buttons Bg Color', 'OBPress_General_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav .custtom_bg_color' => 'fill: {{obpress_custom_slider_top_next_and_previous_buttons_bg_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_next_and_previous_buttons_border_color',
+			[
+				'label' => __('Buttons Border Color', 'OBPress_General_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav .custtom_bg_color' => 'stroke: {{obpress_custom_slider_top_next_and_previous_buttons_border_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_next_and_previous_buttons_arrows_color',
+			[
+				'label' => __('Buttons Arrows Color', 'OBPress_General_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav .custtom_color' => 'stroke: {{obpress_custom_slider_top_next_and_previous_buttons_arrows_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_next_and_previous_buttons_bg_hover_color',
+			[
+				'label' => __('Buttons Bg Hover Color', 'OBPress_General_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav svg:hover .custtom_bg_color' => 'fill: {{obpress_custom_slider_top_next_and_previous_buttons_bg_hover_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_next_and_previous_buttons_border_hover_color',
+			[
+				'label' => __('Buttons Border Hover Color', 'OBPress_General_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav svg:hover .custtom_bg_color' => 'stroke: {{obpress_custom_slider_top_next_and_previous_buttons_border_hover_color}}'
+				],
+			]
+		);
+
+		$this->add_control(
+			'obpress_custom_slider_top_next_and_previous_buttons_arrows_hover_color',
+			[
+				'label' => __('Buttons Arrows Hover Color', 'OBPress_General_Widgets'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-spa-offer-holder .obpress-spa-swiper-nav svg:hover .custtom_color' => 'stroke: {{obpress_custom_slider_top_next_and_previous_buttons_arrows_hover_color}}'
 				],
 			]
 		);
